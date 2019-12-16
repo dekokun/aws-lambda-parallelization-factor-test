@@ -39,4 +39,8 @@ $ make setup-s3
 $ make deploy
 ```
 
+5. put records to kinesis
 
+```bash
+$ make put_records
+```

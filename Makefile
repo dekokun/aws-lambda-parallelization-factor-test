@@ -29,6 +29,6 @@ install:
 	pipenv install
 	go get aws-sam-local
 
-.PHONY: put_record
-put_record:
+.PHONY: put_records
+put_records:
 	pipenv run python put_record.py aws-lambda-parallelization-factor-test-Stream-8O03ERWKMNXR 1000
