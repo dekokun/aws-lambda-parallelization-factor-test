@@ -13,4 +13,4 @@ def lambda_handler(event, context):
         payload = base64.b64decode(record['kinesis']['data']).decode("utf-8")
         print("Payload: " + payload)
     time.sleep(1)
-    return 'Successfully {} records.'.format(len(count))
+    return 'Successfully {} records.'.format(count)
