@@ -2,7 +2,21 @@ AWSTemplateFormatVersion: '2010-09-09'
 Transform: AWS::Serverless-2016-10-31
 Description: A function that processes data from a Kinesis stream.
 Resources:
-  StreamProcessor:
+  StreamProcessor1:
+    Type: AWS::Serverless::Function
+    Properties:
+      Handler: index.lambda_handler
+      Runtime: python3.8
+      CodeUri: src/
+      Events:
+        Stream:
+          Type: Kinesis
+          Properties:
+            Stream: !GetAtt Stream.Arn
+            ParallelizationFactor: 1
+            StartingPosition: TRIM_HORIZON
+            BatchSize: 1
+  StreamProcessor2:
     Type: AWS::Serverless::Function
     Properties:
       Handler: index.lambda_handler
