@@ -22,6 +22,8 @@ $ git clone https://github.com/dekokun/aws-lambda-parallelization-factor-test.gi
 
 ```bash
 $ cd aws-lambda-parallelization-factor-test
+$ cp config.mk.template config.mk
+# fill config exclude `CONFIG_KINESIS_STREAM_NAME`
 $ vi config.mk
 ```
 
@@ -42,5 +44,8 @@ $ make deploy
 5. put records to kinesis
 
 ```bash
+# fill `CONFIG_KINESIS_STREAM_NAME` field with created kinesis name.
+$ vi config.mk
+# put records to kinesis
 $ make put_records
 ```
