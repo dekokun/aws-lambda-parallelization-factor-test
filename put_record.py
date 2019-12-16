@@ -23,4 +23,3 @@ for i in range(recordCount):
     )
     print(res)
 
-    time.sleep(0.1)
