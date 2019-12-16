@@ -14,7 +14,7 @@ Resources:
           Properties:
             Stream: !GetAtt Stream.Arn
             ParallelizationFactor: 1
-            StartingPosition: LATEST
+            StartingPosition: TRIM_HORIZON
             BatchSize: 1
   Stream:
     Type: AWS::Kinesis::Stream
