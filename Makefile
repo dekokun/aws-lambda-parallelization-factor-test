@@ -31,4 +31,4 @@ install:
 
 .PHONY: put_records
 put_records:
-	pipenv run python put_record.py aws-lambda-parallelization-factor-test-Stream-8O03ERWKMNXR 1000
+	pipenv run python put_record.py $(CONFIG_KINESIS_STREAM_NAME) 1000
