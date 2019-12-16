@@ -21,8 +21,3 @@ Resources:
     Properties:
       ShardCount: 1
 
-Outputs:
-    KinesisStream:
-      Description: "Kinesis Stream that will trigger Lambda function upon new records"
-      Value: !GetAtt Stream.Arn
-
