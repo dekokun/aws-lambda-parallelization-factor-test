@@ -8,7 +8,6 @@
 - Install and Setup [AWS CLI](https://aws.amazon.com/cli/)
   - Setup: [AWS account and credentials](http://docs.aws.amazon.com/cli/latest/userguide/cli-chap-getting-started.html).
 - Install pipenv
-- Install aws-sam-cli
 
 ### Installation
 
