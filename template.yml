@@ -27,6 +27,7 @@ Resources:
           Type: Kinesis
           Properties:
             Stream: !GetAtt Stream.Arn
+            # レコードをputした後にここの値を増やしてデプロイするとIteratorAgeの上昇が抑えられる
             ParallelizationFactor: 1
             StartingPosition: TRIM_HORIZON
             BatchSize: 1
