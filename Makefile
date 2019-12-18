@@ -4,17 +4,17 @@ include $(CONFIG)
 OUTPUT_TEMPLATE := output.yml
 INPUT_TEMPATE := template.yml
 
-SAMLOCAL := aws-sam-local
+AWS := aws cloudformation
 
 .PHONY: deploy
 deploy: $(OUTPUT_TEMPLATE)
-	$(SAMLOCAL) deploy \
+	$(AWS) deploy \
 		--template-file $< \
 		--stack-name $(CONFIG_CLOUDFORMATION_STACK_NAME) \
 		--capabilities CAPABILITY_IAM
 
 $(OUTPUT_TEMPLATE): $(INPUT_TEMPATE) src/index.py
-	$(SAMLOCAL) package \
+	$(AWS) package \
 		--template-file $< \
 		--s3-bucket $(CONFIG_CLOUDFORMATION_PACKAGE_S3_BUCKET_NAME) \
 		--s3-prefix $(CONFIG_CLOUDFORMATION_PACKAGE_S3_PREFIX) \
@@ -27,7 +27,6 @@ setup-s3:
 .PHONY: install
 install:
 	pipenv install
-	go get aws-sam-local
 
 .PHONY: put_records
 put_records:

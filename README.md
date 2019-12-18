@@ -38,6 +38,7 @@ $ make setup-s3
 4. deploy with AWS CloudFormation
 
 ```bash
+$ make install
 $ make deploy
 ```
 
